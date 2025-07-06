@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/ai_assistant.egg-info/PKG-INFO
+src/ai_assistant.egg-info/SOURCES.txt
+src/ai_assistant.egg-info/dependency_links.txt
+src/ai_assistant.egg-info/requires.txt
+src/ai_assistant.egg-info/top_level.txt
+src/assistant/__init__.py
+src/assistant/base_tool.py
+src/assistant/config.py
+src/assistant/main.py
+src/assistant/registry.py
