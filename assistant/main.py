@@ -24,7 +24,9 @@ async def main():
 
     # Register your Calculator tool here
     from assistant.tools.calculator import CalculatorTool
+    from assistant.tools.currency_converter import CurrencyConverterTool
     tool_registry.register(CalculatorTool)
+    tool_registry.register(CurrencyConverterTool)
 
     console.print("[bold green]AI CLI Assistant[/bold green] — type 'exit' to quit")
 
@@ -68,13 +70,12 @@ async def main():
                 console.print(f"[red]Unknown tool requested: {func_name}[/red]")
                 continue
 
-            # Check required argument before calling run()
-            if "expression" not in args:
-                console.print(f"[red]Error: Missing required argument 'expression' for tool {func_name}[/red]")
+            try:
+                result = await tool().run(**args)
+            except TypeError as e:
+                console.print(f"[red]Error: {e}[/red]")
                 continue
 
-            # Run the tool (await if async)
-            result = await tool().run(**args)
 
             # Add the function call and result to the conversation history
             messages.append({
