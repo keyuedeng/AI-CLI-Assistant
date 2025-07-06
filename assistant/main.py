@@ -25,8 +25,10 @@ async def main():
     # Register your Calculator tool here
     from assistant.tools.calculator import CalculatorTool
     from assistant.tools.currency_converter import CurrencyConverterTool
+    from assistant.tools.dice_roller import DiceRollerTool
     tool_registry.register(CalculatorTool)
     tool_registry.register(CurrencyConverterTool)
+    tool_registry.register(DiceRollerTool)
 
     console.print("[bold green]AI CLI Assistant[/bold green] — type 'exit' to quit")
 
