@@ -7,6 +7,7 @@ Installation and configuration:
 - add environment variables and fill in OpenAI API Key
 
 Running the assistant:
+source .venv/bin/activate
 python -m assistant.main
 - Type quit to leave
 
